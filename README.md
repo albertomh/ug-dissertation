@@ -2,7 +2,7 @@
 
 #### Alberto Morón Hernández
 
-Probing the Semantic Web and exploring future directions for a ‘Web of data’.
+My dissertation focuses on paraphrasing verbal metonymy through computational methods. My research is supported in part by Amazon through an AWS Educate grant.
 
 This repo contains most of the code employed in the collection and analysis of data for my undergraduate dissertation at the University of Manchester.
 
