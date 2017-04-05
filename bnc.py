@@ -2,6 +2,12 @@ import nltk.corpus.reader.bnc
 import time
 
 
+# ==========================================================================================================
+"""
+Read BNC data. Target specific folders (aca, dem, fic, news) with regex in
+fileids parameter.
+
+"""
 start_time = time.perf_counter()
 BNC_data = nltk.corpus.reader.bnc.BNCCorpusReader(root='/home/ubuntu/ug-d/bncbaby/',
                                             fileids=r'aca/\w*\.xml', # r'aca/\w*\.xml', # r'[a-z]{3}/\w*\.xml')
