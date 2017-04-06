@@ -23,3 +23,8 @@ def listall():
 
     sent_counter = 0
     file_counter = len(BNC_data.fileids())
+
+    for fileid in BNC_data.fileids():
+        number_of_sents = len(BNC_data.sents(fileid))
+        sent_counter += number_of_sents
+        print(fileid, number_of_sents)
