@@ -18,6 +18,13 @@ print('\n|| Successfully loaded the British National Corpus in {:.1f}'.format(ti
 
 # ==========================================================================================================
 def listall():
+    """
+    Prints a list of all files in the dataset and
+    the number of sentences in each file.
+
+    >> python3 -c 'import ubnc; ubnc.listall()'
+
+    """
 
     start_time = time.perf_counter()
 
