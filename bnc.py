@@ -28,3 +28,6 @@ def listall():
         number_of_sents = len(BNC_data.sents(fileid))
         sent_counter += number_of_sents
         print(fileid, number_of_sents)
+
+    time_taken = time.perf_counter() - start_time
+    print('\n || {} sentences across {} files. ||\n'.format(sent_counter, file_counter), '|| That took: {:.1f}'.format(time_taken), 'seconds. ||\n')
