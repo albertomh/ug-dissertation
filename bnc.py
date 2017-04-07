@@ -38,3 +38,10 @@ def listall():
 
     time_taken = time.perf_counter() - start_time
     print('\n || {} sentences across {} files. ||\n'.format(sent_counter, file_counter), '|| That took: {:.1f}'.format(time_taken), 'seconds. ||\n')
+
+
+# ==========================================================================================================
+def search(verb):
+
+    start_time = time.perf_counter()
+    sent_counter = 0
