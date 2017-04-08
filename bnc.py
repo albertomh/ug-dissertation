@@ -52,3 +52,6 @@ def search(verb):
     num_words = 0
     print("Calculating total number of words...\n")
     total_words = len(BNC_data.words())
+
+    match_files = []
+    logfile_name = "log.txt"
