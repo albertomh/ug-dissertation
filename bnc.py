@@ -60,3 +60,9 @@ def search(verb):
         sentences_in_file = BNC_data.tagged_sents(fileid, stem=True)  # c5=True
         total_files_counter += 1
         sent_list = []
+
+
+        outfile_name = "{}.txt".format(fileid)
+        outfile_name = outfile_name.replace("/", "-")
+        outfile_name = outfile_name.replace(".xml", "")
+        counter = 0
