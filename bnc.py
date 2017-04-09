@@ -74,3 +74,6 @@ def search(verb):
         for position, sentence in enumerate(sentences_in_file[0:len(sentences_in_file)]):
             for tup in sentence:
                 if verb in tup:
+
+                    with open("/home/ubuntu/ug-d/out/{}/{}".format(verb, outfile_name), "a") as outfile:
+                        outfile.write("{}: {}, ".format(position, sentence))
