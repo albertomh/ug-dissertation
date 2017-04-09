@@ -82,3 +82,5 @@ def search(verb):
                     sent_list.append(position)
                     num_words += len(sentence)
                     sent_counter += 1
+
+                    match_files.append(outfile_name)
