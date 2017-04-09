@@ -77,3 +77,8 @@ def search(verb):
 
                     with open("/home/ubuntu/ug-d/out/{}/{}".format(verb, outfile_name), "a") as outfile:
                         outfile.write("{}: {}, ".format(position, sentence))
+
+                    counter += 1
+                    sent_list.append(position)
+                    num_words += len(sentence)
+                    sent_counter += 1
