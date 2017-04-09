@@ -66,3 +66,11 @@ def search(verb):
         outfile_name = outfile_name.replace("/", "-")
         outfile_name = outfile_name.replace(".xml", "")
         counter = 0
+
+
+        with open("/home/ubuntu/ug-d/out/{}/{}".format(verb, outfile_name), "a") as outfile:
+            outfile.write("{")
+
+        for position, sentence in enumerate(sentences_in_file[0:len(sentences_in_file)]):
+            for tup in sentence:
+                if verb in tup:
