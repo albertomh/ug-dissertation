@@ -84,3 +84,5 @@ def search(verb):
                     sent_counter += 1
 
                     match_files.append(outfile_name)
+
+        statusmsg_filesents = "{}  \n| {} sentences saved to out/{}/{}.\n".format(sent_list, len(sent_list), verb, outfile_name)
