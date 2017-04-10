@@ -86,3 +86,6 @@ def search(verb):
                     match_files.append(outfile_name)
 
         statusmsg_filesents = "{}  \n| {} sentences saved to out/{}/{}.\n".format(sent_list, len(sent_list), verb, outfile_name)
+
+        with open("/home/ubuntu/ug-d/out/{}/{}".format(verb, outfile_name), "a") as outfile:
+            outfile.write("}")
