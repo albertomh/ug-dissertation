@@ -1,5 +1,6 @@
 import nltk.corpus.reader.bnc
 import time
+import os
 
 
 # ==========================================================================================================
@@ -89,3 +90,7 @@ def search(verb):
 
         with open("/home/ubuntu/ug-d/out/{}/{}".format(verb, outfile_name), "a") as outfile:
             outfile.write("}")
+        with open("/home/ubuntu/ug-d/out/{}/{}".format(verb, logfile_name), "a") as logfile:
+            logfile.write(statusmsg_filesents)
+        if len(sent_list) == 0:
+            os.remove("/home/ubuntu/ug-d/out/{}/{}".format(verb, outfile_name))
