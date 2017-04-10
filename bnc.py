@@ -94,3 +94,4 @@ def search(verb):
             logfile.write(statusmsg_filesents)
         if len(sent_list) == 0:
             os.remove("/home/ubuntu/ug-d/out/{}/{}".format(verb, outfile_name))
+        print(statusmsg_filesents)
