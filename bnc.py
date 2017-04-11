@@ -95,3 +95,7 @@ def search(verb):
         if len(sent_list) == 0:
             os.remove("/home/ubuntu/ug-d/out/{}/{}".format(verb, outfile_name))
         print(statusmsg_filesents)
+
+
+    time_taken = time.perf_counter() - start_time
+    statusmsg_final = "{}\nFound '{}' in {} / {} sentences across {} / {} files.\nScraped {} words out of {}. \n\n|| That took: {:.1f} seconds. ||\n".format("-" * 75, verb, sent_counter, total_sents, len(set(match_files)), total_files_counter, num_words, total_words, time_taken)
