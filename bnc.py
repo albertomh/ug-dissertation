@@ -43,6 +43,20 @@ def listall():
 
 # ==========================================================================================================
 def search(verb):
+    """
+    Saves a list of sentences containing the search term 'word'. Scraped data
+    is output to out/word/cat-$FILE.txt in the form:
+
+        {x: [('stem', 'TAG'), (...)], [...]}
+
+    A dictionary whose key 'x' is the position of the dict's value in
+    the original .xml; and whose value is a list of tuples where the
+    first item of the tuple is the stem form of a word and the second
+    item is the TAG foundin the British National Corpus.
+
+    >> python3 -c 'import ubnc; ubnc.search("verb")'
+
+    """
 
     start_time = time.perf_counter()
     sent_counter = 0
