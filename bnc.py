@@ -76,6 +76,16 @@ def search(verb):
         total_files_counter += 1
         sent_list = []
 
+        """
+        - The outfile_name is in the form: {cat}_{file}.txt where cat(egory)
+          can be aca, dem, fic, news and file is the name of the source .xml.
+
+        - A counter is created which will later be used to print how many
+          sentences have been saved per file.
+
+        - A summary of the scraped data is written to word/log.txt
+
+        """
 
         outfile_name = "{}.txt".format(fileid)
         outfile_name = outfile_name.replace("/", "-")
