@@ -93,6 +93,7 @@ def search(verb):
         counter = 0
 
 
+        # Look through sentences for instances of 'word'.
         with open("/home/ubuntu/ug-d/out/{}/{}".format(verb, outfile_name), "a") as outfile:
             outfile.write("{")
 
@@ -100,9 +101,11 @@ def search(verb):
             for tup in sentence:
                 if verb in tup:
 
+                    # If a match is found, write tagged data to outfile.
                     with open("/home/ubuntu/ug-d/out/{}/{}".format(verb, outfile_name), "a") as outfile:
                         outfile.write("{}: {}, ".format(position, sentence))
 
+                    # Update values and print message for each file.
                     counter += 1
                     sent_list.append(position)
                     num_words += len(sentence)
@@ -112,6 +115,7 @@ def search(verb):
 
         statusmsg_filesents = "{}  \n| {} sentences saved to out/{}/{}.\n".format(sent_list, len(sent_list), verb, outfile_name)
 
+        # Write to logfile and print status for each file. Remove outfile if empty.
         with open("/home/ubuntu/ug-d/out/{}/{}".format(verb, outfile_name), "a") as outfile:
             outfile.write("}")
         with open("/home/ubuntu/ug-d/out/{}/{}".format(verb, logfile_name), "a") as logfile:
@@ -121,6 +125,7 @@ def search(verb):
         print(statusmsg_filesents)
 
 
+    # Closing message printed to console and added to log.
     time_taken = time.perf_counter() - start_time
     statusmsg_final = "{}\nFound '{}' in {} / {} sentences across {} / {} files.\nScraped {} words out of {}. \n\n|| That took: {:.1f} seconds. ||\n".format("-" * 75, verb, sent_counter, total_sents, len(set(match_files)), total_files_counter, num_words, total_words, time_taken)
 
