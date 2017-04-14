@@ -132,3 +132,7 @@ def search(verb):
     with open("/home/ubuntu/ug-d/out/{}/{}".format(verb, logfile_name), "a") as logfile:
             logfile.write(statusmsg_final)
     print(statusmsg_final)
+
+
+# ==========================================================================================================
+def getVV(word, cat):
