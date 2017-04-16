@@ -144,3 +144,7 @@ def getVV(word, cat):
     directory = "/home/ubuntu/ug-d/out/{}/{}/".format(word, cat)
     merge_dir = "/home/ubuntu/ug-d/out-merge/{}/".format(word)
     print(directory)
+
+
+    with open("{}{}VV.txt".format(merge_dir, cat), "a") as mergefile:
+        mergefile.write("{")
