@@ -136,3 +136,11 @@ def search(verb):
 
 # ==========================================================================================================
 def getVV(word, cat):
+
+    start_time = time.perf_counter()
+    total_files = 0
+    total_sents = 0
+
+    directory = "/home/ubuntu/ug-d/out/{}/{}/".format(word, cat)
+    merge_dir = "/home/ubuntu/ug-d/out-merge/{}/".format(word)
+    print(directory)
