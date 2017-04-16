@@ -148,3 +148,9 @@ def getVV(word, cat):
 
     with open("{}{}VV.txt".format(merge_dir, cat), "a") as mergefile:
         mergefile.write("{")
+
+    for file in os.listdir(directory):
+        if not file.endswith("log.txt"):
+            total_files += 1
+            filetag = file.replace(".txt", "").replace("-", "")
+            filetag = filetag.replace(cat, "")
