@@ -158,3 +158,14 @@ def getVV(word, cat):
             with open("{}{}".format(directory, file), "r") as oldfile:
                 oldfile = ast.literal_eval(oldfile.read())
                 all_keys = list(oldfile.keys())
+
+
+            with open("{}{}VV.txt".format(merge_dir, cat), "a") as mergefile:
+
+                for key in all_keys:
+                    for x, y in zip(oldfile[key], oldfile[key][1:]):
+                        if x[0] == word and x[1] == "VERB" and y[1] == "VERB":
+                            total_sents += 1
+                            print("\n{}  Sentence found in: {}  {}".format("-" * 15, file, "-" * 15))
+                            mergefile.write("'{}-{}': {}, ".format(filetag, key, oldfile[key]))
+                            print("{}\n".format(oldfile[key]))
