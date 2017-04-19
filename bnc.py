@@ -1,6 +1,7 @@
 import nltk.corpus.reader.bnc
 import time
 import os
+import ast
 
 
 # ==========================================================================================================
@@ -135,14 +136,26 @@ def search(verb):
 
 
 # ==========================================================================================================
-def getVV(word, cat):
+def getVV(verb, cat):
+    """
+    Merges the files created by search(word) and flattentuple(word), saving
+    only instances of ("word", V), ("?", V).
+
+    First load all files corresponding to a single category into /out/{word}/
+    by running search("{word}") with a suitable regex.
+
+    Then run getVV for each of the four categories.
+
+    >> python3 -c 'import ubnc; ubnc.getVV("word", "cat")'   | "begin", "aca"
+
+    """
 
     start_time = time.perf_counter()
     total_files = 0
     total_sents = 0
 
-    directory = "/home/ubuntu/ug-d/out/{}/{}/".format(word, cat)
-    merge_dir = "/home/ubuntu/ug-d/out-merge/{}/".format(word)
+    directory = "/home/ubuntu/ug-d/out/{}/{}/".format(verb, cat)
+    merge_dir = "/home/ubuntu/ug-d/out-merge/{}/".format(verb)
     print(directory)
 
 
@@ -164,7 +177,7 @@ def getVV(word, cat):
 
                 for key in all_keys:
                     for x, y in zip(oldfile[key], oldfile[key][1:]):
-                        if x[0] == word and x[1] == "VERB" and y[1] == "VERB":
+                        if x[0] == verb and x[1] == "VERB" and y[1] == "VERB":
                             total_sents += 1
                             print("\n{}  Sentence found in: {}  {}".format("-" * 15, file, "-" * 15))
                             mergefile.write("'{}-{}': {}, ".format(filetag, key, oldfile[key]))
