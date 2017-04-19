@@ -169,3 +169,7 @@ def getVV(word, cat):
                             print("\n{}  Sentence found in: {}  {}".format("-" * 15, file, "-" * 15))
                             mergefile.write("'{}-{}': {}, ".format(filetag, key, oldfile[key]))
                             print("{}\n".format(oldfile[key]))
+
+
+    with open("{}{}VV.txt".format(merge_dir, cat), "a") as mergefile:
+        mergefile.write("}")
