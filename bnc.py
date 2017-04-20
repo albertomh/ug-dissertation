@@ -192,3 +192,10 @@ def getVV(verb, cat):
 
 # ==========================================================================================================
 def getVNP(verb, cat):
+
+    start_time = time.perf_counter()
+    total_files = 0
+    total_sents = 0
+
+    directory = "/home/ubuntu/ug-d/out/{}/{}/".format(verb, cat)
+    merge_dir = "/home/ubuntu/ug-d/out-merge/{}/".format(verb)
