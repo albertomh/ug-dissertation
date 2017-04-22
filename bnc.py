@@ -208,4 +208,8 @@ def getVNP(verb, cat):
         if not file.endswith("log.txt"):
             total_files += 1
             filetag = file.replace(".txt", "").replace("-", "")
-            filetag = filetag.replace(cat, "")    
+            filetag = filetag.replace(cat, "")
+
+            with open("{}{}".format(directory, file), "r") as oldfile:
+                oldfile = ast.literal_eval(oldfile.read())
+                all_keys = list(oldfile.keys())
