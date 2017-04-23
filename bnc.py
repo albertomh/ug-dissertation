@@ -213,3 +213,6 @@ def getVNP(verb, cat):
             with open("{}{}".format(directory, file), "r") as oldfile:
                 oldfile = ast.literal_eval(oldfile.read())
                 all_keys = list(oldfile.keys())
+
+
+            with open("{}{}VNP.txt".format(merge_dir, cat), "a") as mergefile:
