@@ -216,3 +216,11 @@ def getVNP(verb, cat):
 
 
             with open("{}{}VNP.txt".format(merge_dir, cat), "a") as mergefile:
+
+                for key in all_keys:
+                    for x, y in zip(oldfile[key], oldfile[key][1:]):
+                        if x[0] == verb and x[1] == "VERB" and y[0] == "the" and y[1] == "ART":
+                            total_sents += 1
+                            print("\n{}  Sentence found in: {}  {}".format("-" * 15, file, "-" * 15))
+                            mergefile.write("'{}-{}': {}, ".format(filetag, key, oldfile[key]))
+                            print("{}\n".format(oldfile[key]))
