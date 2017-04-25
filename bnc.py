@@ -193,6 +193,18 @@ def getVV(verb, cat):
 
 # ==========================================================================================================
 def getVNP(verb, cat):
+    """
+    Merges the files created by search(verb) and flattentuple(verb), saving
+    only instances of ("verb", V), ("the", ART).
+
+    First load all files corresponding to a single category into /out/{verb}/
+    by running search("{verb}") with a suitable regex.
+
+    Then run getVNP for each of the four categories.
+
+    >> python3 -c 'import ubnc; ubnc.getVNP("verb", "cat")'   | "begin", "aca"
+
+    """
 
     start_time = time.perf_counter()
     total_files = 0
