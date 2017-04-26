@@ -259,3 +259,9 @@ def targetVNP(verb):
         if not file.endswith("log.txt") and file.endswith("VNP.txt"):
             print("\n{}  FILE BEING PROCESSED: {}  {}".format("-" * 15, file, "-" * 15))
             total_files += 1
+
+            with open("{}{}".format(directory, file), "r") as oldfile:
+                oldfile = ast.literal_eval(oldfile.read())
+                all_keys = list(oldfile.keys())
+                num_sentences = len(all_keys)
+                total_sents += num_sentences
