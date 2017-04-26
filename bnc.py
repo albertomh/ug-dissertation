@@ -253,3 +253,9 @@ def targetVNP(verb):
     total_sents = 0
 
     directory = "/home/ubuntu/ug-d/out-merge/{}/".format(verb)
+
+
+    for file in os.listdir(directory):
+        if not file.endswith("log.txt") and file.endswith("VNP.txt"):
+            print("\n{}  FILE BEING PROCESSED: {}  {}".format("-" * 15, file, "-" * 15))
+            total_files += 1
