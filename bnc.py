@@ -265,3 +265,8 @@ def targetVNP(verb):
                 all_keys = list(oldfile.keys())
                 num_sentences = len(all_keys)
                 total_sents += num_sentences
+
+            file = file.replace(".txt", "")
+
+            with open("{}/{}-snippets.txt".format(directory, file), "a") as newfile:
+                newfile.write("[")
