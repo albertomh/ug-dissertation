@@ -247,3 +247,9 @@ def getVNP(verb, cat):
 
 # ==========================================================================================================
 def targetVNP(verb):
+
+    start_time = time.perf_counter()
+    total_files = 0
+    total_sents = 0
+
+    directory = "/home/ubuntu/ug-d/out-merge/{}/".format(verb)
