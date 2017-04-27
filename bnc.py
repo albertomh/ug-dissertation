@@ -288,3 +288,6 @@ def targetVNP(verb):
 
             with open("{}/{}-snippets.txt".format(directory, file), "a") as newfile:
                 newfile.write("]")
+
+    time_taken = time.perf_counter() - start_time
+    print("\n{}\nProcessed {} sentences across {} files.\n|| That took: {:.1f} seconds. ||\n".format("-" * 75, total_sents, total_files, time_taken))
