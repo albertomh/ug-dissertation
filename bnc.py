@@ -247,6 +247,17 @@ def getVNP(verb, cat):
 
 # ==========================================================================================================
 def targetVNP(verb):
+    """
+    Uses the tuples created by getVV(verb), getVNP(verb) which were
+    subsequently stored in /out-merge/verb/{CAT}-{VV|VNP}.txt.
+
+    Then trims sentences to get target NPs, storing snippets as
+    a list at /out-merge/{verb}/catVNP-snippets.
+    e.g. [ [('begin', 'VERB'), ('the', 'ART'), ('research', 'SUBST')], [...] ]
+
+    >> python3 -c 'import ubnc; ubnc.targetVNP("verb")' |  "begin"
+
+    """
 
     start_time = time.perf_counter()
     total_files = 0
