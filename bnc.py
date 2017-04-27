@@ -277,3 +277,11 @@ def targetVNP(verb):
                 snippet_index = [x for x, y in enumerate(oldfile[key]) if y[0] == verb]
                 snippet_index = snippet_index[0]  # snippet_index is an integer.
                 snippet = oldfile[key][snippet_index:]
+
+                end_index = [x for x, y in enumerate(snippet) if y[1] == 'SUBST']
+                end_index = end_index[0] + 1
+
+                snippet = snippet[:end_index]
+
+                with open("{}/{}-snippets.txt".format(directory, file), "a") as newfile:
+                    newfile.write("{}, ".format(snippet))
