@@ -285,3 +285,6 @@ def targetVNP(verb):
 
                 with open("{}/{}-snippets.txt".format(directory, file), "a") as newfile:
                     newfile.write("{}, ".format(snippet))
+
+            with open("{}/{}-snippets.txt".format(directory, file), "a") as newfile:
+                newfile.write("]")
