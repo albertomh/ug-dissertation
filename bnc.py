@@ -311,3 +311,8 @@ def retrosearch(verb, cat):
     sent_counter = 0
     print("Calculating total number of sentences...")
     total_sents = len(BNC_data.sents())
+
+    total_files_counter = 0
+    num_words = 0
+    print("Calculating total number of words...\n")
+    total_words = len(BNC_data.words())
