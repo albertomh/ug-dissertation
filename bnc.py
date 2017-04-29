@@ -306,3 +306,8 @@ def targetVNP(verb):
 
 # ==========================================================================================================
 def retrosearch(verb, cat):
+
+	start_time = time.perf_counter()
+    sent_counter = 0
+    print("Calculating total number of sentences...")
+    total_sents = len(BNC_data.sents())
