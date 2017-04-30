@@ -325,3 +325,10 @@ def retrosearch(verb, cat):
 
         for snippet in snippet_list:
             nouns.append([tup[0] for tup in snippet if tup[1] == 'SUBST'][0])
+
+ 	match_files = []
+    paraverb_sents = []
+
+    for fileid in BNC_data.fileids():
+        sentences_in_file = BNC_data.tagged_sents(fileid, stem=False)  # c5=True
+        total_files_counter += 1
