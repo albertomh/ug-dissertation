@@ -332,3 +332,10 @@ def retrosearch(verb, cat):
     for fileid in BNC_data.fileids():
         sentences_in_file = BNC_data.tagged_sents(fileid, stem=False)  # c5=True
         total_files_counter += 1
+
+    	#  Sentences that contain a verb which could potentially
+        #  paraphrase the original verb.
+        for noun in nouns:
+            for sentence in sentences_in_file:
+                for tup in sentence:
+                    if tup[0] == noun and tup[1] == 'SUBST':
