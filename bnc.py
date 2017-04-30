@@ -339,3 +339,11 @@ def retrosearch(verb, cat):
             for sentence in sentences_in_file:
                 for tup in sentence:
                     if tup[0] == noun and tup[1] == 'SUBST':
+
+                    	sentence = [x[0] for x in sentence]
+                        sentence = " ".join(sentence)
+
+                        paraverb_sents.append(sentence)
+                        num_words += len(sentence)
+                        sent_counter += 1
+                        match_files.append(fileid)
