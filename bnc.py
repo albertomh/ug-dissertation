@@ -316,3 +316,12 @@ def retrosearch(verb, cat):
     num_words = 0
     print("Calculating total number of words...\n")
     total_words = len(BNC_data.words())
+
+
+	# Generate list of nouns that have appeared alongside 'verb'.
+    nouns = []
+    with open("/home/ubuntu/ug-d/out-merge/{}/{}VNP-snippets.txt".format(verb, cat)) as snippet_file:
+        snippet_list = ast.literal_eval(snippet_file.read())
+
+        for snippet in snippet_list:
+            nouns.append([tup[0] for tup in snippet if tup[1] == 'SUBST'][0])
