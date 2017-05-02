@@ -352,3 +352,7 @@ def retrosearch(verb, cat):
     #  Write list of sentences out to a file.
     with open("/home/ubuntu/ug-d/out-para/{}/{}-retroNPs.txt".format(verb, cat), "a") as outfile:
         outfile.write(str(paraverb_sents))
+
+
+    statusmsg_filesents = "\n| {} sentences saved to out-para/{}\n".format(sent_counter, verb)
+    print(statusmsg_filesents)
