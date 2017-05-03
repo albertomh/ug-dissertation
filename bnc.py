@@ -356,3 +356,8 @@ def retrosearch(verb, cat):
 
     statusmsg_filesents = "\n| {} sentences saved to out-para/{}\n".format(sent_counter, verb)
     print(statusmsg_filesents)
+
+
+    # Closing message printed to console and added to log.
+    time_taken = time.perf_counter() - start_time
+    statusmsg_final = "{}\nTarget NPs:{}\n\nFound {} NP-containing sentences (out of a total of {} sentences) across {} / {} files.\nScraped {} words out of {}. \n\n|| That took: {:.1f} seconds. ||\n".format("-" * 75, nouns, sent_counter, total_sents, len(set(match_files)), total_files_counter, num_words, total_words, time_taken)
