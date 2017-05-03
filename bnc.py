@@ -361,3 +361,7 @@ def retrosearch(verb, cat):
     # Closing message printed to console and added to log.
     time_taken = time.perf_counter() - start_time
     statusmsg_final = "{}\nTarget NPs:{}\n\nFound {} NP-containing sentences (out of a total of {} sentences) across {} / {} files.\nScraped {} words out of {}. \n\n|| That took: {:.1f} seconds. ||\n".format("-" * 75, nouns, sent_counter, total_sents, len(set(match_files)), total_files_counter, num_words, total_words, time_taken)
+
+    with open("/home/ubuntu/ug-d/out-para/{}/log.txt".format(verb), "a") as logfile:
+            logfile.write(statusmsg_final)
+    print(statusmsg_final)
