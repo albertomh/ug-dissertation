@@ -306,6 +306,14 @@ def targetVNP(verb):
 
 # ==========================================================================================================
 def retrosearch(verb, cat):
+	"""
+    Retrosearch writes to /out-para/verb/retroNPs.txt the sentences
+    which contain one of the target NPs found to be a collocate
+    to the original verbs.
+
+    >> python3 -c 'import ubnc; ubnc.retrosearch("finish", "dem")'
+
+    """
 
 	start_time = time.perf_counter()
     sent_counter = 0
