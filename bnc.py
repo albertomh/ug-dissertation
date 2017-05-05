@@ -306,7 +306,7 @@ def targetVNP(verb):
 
 # ==========================================================================================================
 def retrosearch(verb, cat):
-	"""
+    """
     Retrosearch writes to /out-para/verb/retroNPs.txt the sentences
     which contain one of the target NPs found to be a collocate
     to the original verbs.
@@ -315,7 +315,7 @@ def retrosearch(verb, cat):
 
     """
 
-	start_time = time.perf_counter()
+    start_time = time.perf_counter()
     sent_counter = 0
     print("Calculating total number of sentences...")
     total_sents = len(BNC_data.sents())
