@@ -9,3 +9,5 @@ w = models.KeyedVectors.load_word2vec_format('/home/ubuntu/sim/CBOW|skipgram.bin
 relations = {'': [''],
              '': [''],
              '': ['']}
+
+original_verbs = list(relations.keys())
