@@ -16,3 +16,4 @@ original_verbs = list(relations.keys())
 for verb in original_verbs:
     print('\n\n')
     for paraverb in relations[verb]:
+        print('{}-{}: {:.5f}'.format(verb, paraverb, w.similarity(''.join([i for i in verb if not i.isdigit()]), paraverb)))
