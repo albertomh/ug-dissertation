@@ -17,3 +17,7 @@ for verb in original_verbs:
     print('\n\n')
     for paraverb in relations[verb]:
         print('{}-{}: {:.5f}'.format(verb, paraverb, w.similarity(''.join([i for i in verb if not i.isdigit()]), paraverb)))
+
+
+time_taken = time.perf_counter() - start_time
+print('\n{}\nDone in {:.5f} seconds.'.format('-' * 25, time_taken))
